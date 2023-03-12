@@ -154,5 +154,44 @@ func main() {
 		subjects:  []string{"MTH-1", "Env", "C++", "Chem", "OS"},
 	}
 	fmt.Println(student1)
+	//closing bracket of if and opening bracket of else should be on the same line otherwise error
+	if num < 60 {
+		fmt.Println("sorry you didn't clear the exam")
+	} else {
+		fmt.Println("congrats, you passed the exam")
+
+	}
+
+	//nested if else
+	if num >= 40 {
+		fmt.Println("Num is more than 10.")
+		if num >= 45 {
+			fmt.Println("Num is also more than 15.")
+		}
+	} else {
+		fmt.Println("Num is less than 10.")
+	}
+
+	//switch satements
+
+	day := 4
+	//cases should have the same type as switch otherwise error
+
+	switch day {
+	case 1:
+		fmt.Println("Monday")
+	case 2:
+		fmt.Println("Tuesday")
+	case 3:
+		fmt.Println("Wednesday")
+	case 4:
+		fmt.Println("Thursday")
+	case 5:
+		fmt.Println("Friday")
+	case 6:
+		fmt.Println("Saturday")
+	case 7:
+		fmt.Println("Sunday")
+	}
 
 }
