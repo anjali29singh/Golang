@@ -1,11 +1,12 @@
 package main
 
 import (
+	hello "BookingApp/extPkg"
 	"fmt"
 )
 
 func greetUser(fname string) {
-	fmt.Printf("Welcome to our conference %v", fname)
+	fmt.Printf("Welcome to our conference %v.\n", fname)
 }
 
 func main() {
@@ -104,5 +105,6 @@ func main() {
 	*/
 
 	//packages
+	hello.Hello()
 
 }
