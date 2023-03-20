@@ -27,6 +27,8 @@ const (
 
 )
 
+//structs
+
 type student struct {
 	name      string
 	course    string
@@ -193,5 +195,31 @@ func main() {
 	case 7:
 		fmt.Println("Sunday")
 	}
+	student1.getSubjects()
 
+	//print does not add new line
+	/*fmt.Print("hello,")
+	fmt.Print("hello,")
+	fmt.Print("hello,")
+	*/
+	//println adds new line after println
+
+	fmt.Println("hey,it's me")
+	fmt.Println("hey,it's me")
+
+	a := 20
+	name := "24"
+	//Printf (formatted string)
+	fmt.Printf("my age is %v.\n", a) //does not add new line
+	fmt.Printf("type is %T.\n", a)
+
+	//Sprintf save formatted strings
+	var str = fmt.Sprintf("my age is %v and my name is %v", a, name)
+	fmt.Println(str)
+}
+
+//methods
+func (stu student) getSubjects() {
+	stu.subjects = append(stu.subjects, "database")
+	fmt.Println("Course : ", stu.subjects)
 }
