@@ -39,4 +39,10 @@ func main() {
 
 	double(slice2)
 	fmt.Println(slice2)
+	var slice3 = []int{1, 2, 3, 4, 5, 6, 10}
+
+	//copy(des, source) // minlen(des,source) is copied to des
+	x := copy(slice2, slice3)
+	fmt.Println(x, slice2, slice3)
+
 }

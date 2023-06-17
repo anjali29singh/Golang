@@ -95,5 +95,11 @@ func main() {
 	fmt.Printf("data type of %v is %T \n", 45, 45)
 
 	//bit operators &,|,^ (XOR), &^  NOR
+	//complex function for making complex numbers
+	c := complex(2, 3)
+	fmt.Println(c)
+
+	//copy
+	//copy(src, des []type)
 
 }
