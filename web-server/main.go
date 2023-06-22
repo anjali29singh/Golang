@@ -1,16 +1,17 @@
 package main
 
 import (
-	"io"
-	"log"
-	"net/http"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
 
-		io.WriteString(w, "server is running at port 8080")
 	})
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	r.Run()
 
 }

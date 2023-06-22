@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"hello/golang-book/chapter11/math"
 )
 
 //if variable name starts with Capital letter then it is exported global
@@ -101,5 +102,5 @@ func main() {
 
 	//copy
 	//copy(src, des []type)
-
+	fmt.Println(math.Sum(3, 4))
 }
