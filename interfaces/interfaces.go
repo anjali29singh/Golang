@@ -21,6 +21,7 @@ type circle struct {
 	radius float64
 }
 
+// methods
 func (r rect) area() float64 {
 	return r.width * r.height
 }

@@ -103,4 +103,8 @@ func main() {
 	//copy
 	//copy(src, des []type)
 	fmt.Println(math.Sum(3, 4))
+
+	//type casting
+	var num3 int64 = 34
+	fmt.Println(num3)
 }
