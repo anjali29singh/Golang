@@ -12,6 +12,7 @@ type Person struct {
 	Age   int    `json:"age"`
 }
 
+//convert json into 
 func main() {
 
 	jsonData := `{"name":"anjali", "email":"anjalisinghdev2@gmail.com","age":22}`
