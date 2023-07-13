@@ -107,4 +107,5 @@ func main() {
 	//type casting
 	var num3 int64 = 34
 	fmt.Println(num3)
+
 }
