@@ -5,7 +5,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"sync"
 	"time"
 )
 
@@ -25,19 +24,48 @@ func responseSize(url string) {
 	fmt.Println("step4: ", len(body))
 }
 
-func count(thing string) {
+func count(thing string, c chan string) {
 	for i := 1; i <= 5; i++ {
-		fmt.Println(i, thing)
+		c <- thing
 		time.Sleep(time.Millisecond * 500)
 	}
+	close(c)
+
 }
+
+// channels are the way for goroutines to communicate with each other
+
 func main() {
 	//when main goroutine finishes the program exits regardless of any goroutine running in the background.
-	go responseSize("https://www.golangprograms.com")
+
+	/*go responseSize("https://www.golangprograms.com")
 	go responseSize("https://coderwall.com")
 	go responseSize("https://stackoverflow.com")
-	time.Sleep(10 * time.Second)
+
+	*/
+	// time.Sleep(10 * time.Second)
 	// fmt.Scanln() //prevent main goroutine from exit before finishing the goroutines
-	var wg sync.WaitGroup
-	go count("sheep")
+	/*var wg sync.WaitGroup
+	wg.Add(1)
+	//
+	go func() {
+		count("sheep")
+		wg.Done()
+		//
+	}()
+	wg.Wait()
+	*/
+
+	c := make(chan string)
+	go count("sheep", c)
+
+	for {
+
+		msg, open := <-c
+		if !open {
+			break
+
+		}
+		fmt.Println(msg)
+	}
 }
