@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// bidirectional channel is converted to unidirectional channel
+// jobs is reciever channel and results channel is used for sending data
 func worker(jobs <-chan int, results chan<- int) {
 
 	for n := range jobs {
